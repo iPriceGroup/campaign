@@ -73,6 +73,22 @@ p, ul li, li{
 	color: #444;
 }
 
+.row {
+    -webkit-box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row > [class*='col-'],
+.row > [class*='col-md'] {
+    -webkit-box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
 .main-typography{
 	font-family: 'Noto Sans', Helvetica, sans-serif;
 	font-size: 16px;
@@ -386,10 +402,6 @@ p, ul li, li{
 
 @media screen and (min-width:1024px)
 {
-	.width-100{
-		max-width: 1280px;
-	}
-
 	#countdown{
 		background: url(./assets/img/11sale.svg) no-repeat;
 		background-size: 100%;
@@ -488,7 +500,8 @@ p, ul li, li{
 		    .big-highlight{
 				padding: 0px;
 				background: url(./assets/img/linedpaper.png); 
-				.i-amphtml-slide-item.i-amphtml-slide-item-show{
+				amp-carousel > div > div
+				{
 				    padding: 25px;
 				}
 			}

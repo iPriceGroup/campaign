@@ -1,0 +1,27 @@
+{
+ "items": [
+   {
+   		"values" : [
+   			{
+   				"title": "Smartphone Banting Harga",
+				"description" : "Produk Terbaik di Bukalapak",
+				"url": "http://bit.ly/2iQbpFU",
+				"img": "image/handphone_banner.jpg"
+   			},
+   			{
+   				"title": "Fashion Harga Miring, Gratis Kirim",
+				"description" : "Produk Terbaik di Bukalapak",
+				"url": "http://bit.ly/2ijmJ9x",
+				"img": "image/Fashion_banner.jpg"
+   			},
+   			{
+   				"title": "Tampil Cantik Gak Harus Mahal",
+				"description" : "Produk Terbaik di Bukalapak",
+				"url": "http://bit.ly/2A63JTV",
+				"img": "image/Kecantikan_banner.jpg"
+   			}
+   		]
+		
+   }
+ ]
+}

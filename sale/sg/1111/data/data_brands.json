@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "values": [
+                {
+                    "title": "Watches",
+                    "description": "What time is it? It's 11.11 - time to get some watches with discounts!",
+                    "url": "https://iprice.sg/watches/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
+                    "img": "http://res.cloudinary.com/dqf8oma0l/image/upload/v1509451728/watch__imo4pa.jpg",
+                    "cta" : "Shop Now",
+                    "default" : true
+                },
+                {
+                    "title": "Smartphones",
+                    "description": "Been eyeing that new smartphone? It's time to get it!",
+                    "url": "https://iprice.sg/phones-tablets/smartphones/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
+                    "img": "http://res.cloudinary.com/dqf8oma0l/image/upload/v1509451728/smartphones__f4ll2x.jpg",
+                    "cta" : "Shop Now",
+                    "default" : true
+                },
+                {
+                    "title": "Bags",
+                    "description": "Backpacks, luggage - Carry these great deals on bags!",
+                    "url": "https://iprice.sg/bags/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
+                    "img": "http://res.cloudinary.com/dqf8oma0l/image/upload/v1509512807/bags2__pu7vf0.jpg",
+                    "cta" : "Shop Now",
+                    "default" : true
+                },
+                {
+                    "title": "Shoes",
+                    "description": "Walk softly, but with great savings on shoes!",
+                    "url": "https://iprice.sg/shoes/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
+                    "img": "http://res.cloudinary.com/dqf8oma0l/image/upload/v1509451728/shoes__xlwz6b.jpg",
+                    "cta" : "Shop Now",
+                    "default" : true
+                }
+            ]
+        }
+    ]
+}

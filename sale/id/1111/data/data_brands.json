@@ -3,11 +3,11 @@
         {
             "values": [
                 {
-                    "title": "Smartphone",
-                    "description": "Dapatkan smartphone idaman Anda dengan diskon besar-besaran sekarang juga!",
-                    "url": "https://iprice.co.id/ponsel-tablet/smartphone/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
-                    "img": "https://res.cloudinary.com/dqf8oma0l/image/upload/v1509451728/smartphones__f4ll2x.jpg",
-                    "cta" : "Belanja Sekarang",
+                    "title": "Zalora",
+                    "description": "Zalora<br />11.11 Singles Day Your Way<br />Up to 60% + 14% Off",
+                    "url": "http://bit.ly/2A3lMJH",
+                    "img": "image/zalora_square.jpg",
+                    "cta" : "Shop Now",
                     "default" : true
                 },
                 {

@@ -23,9 +23,9 @@
 		"highlight" : "10% OFF",
 		"coupon_code" : "required",
 		"description" : "10% OFF site-wide",
-		"url": "",
+		"url": "https://iprice.my/r/c/?_id=13b7487fe7dff194c9d7d3af28c7a3d13200dda9&position=1&sub_product=coupon-store&_exit=%2Fcoupons%2Fgearbest%2F",
 		"img": "image/gearbest.jpg",
-		"type" : "popup"
+		"type" : "direct"
    },
    {
 		"title": "Hotels.com",
@@ -105,7 +105,7 @@
 		"coupon_code" : "required",
 		"description" : "Enjoy up to 45% OFF early bird Asia deals",
 		"url": "https://iprice.my/r/c/?_id=14947c010f91b6cf01c1938726c1f42a2279de1c&position=2&sub_product=coupon-store&_exit=%2Fcoupons%2Fclub-med%2F",
-		"img": "image/foodpanda.jpg",
+		"img": "https://d1vfs9f7h1rfk4.cloudfront.net/store/club-med-my.jpg",
 		"type" : "direct"
    }
  ]

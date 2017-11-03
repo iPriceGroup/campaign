@@ -3,10 +3,10 @@
         {
             "values": [
                 {
-                    "title": "Clothing",
-                    "description": "High fashion, low prices.",
-                    "url": "https://iprice.ph/clothing/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
-                    "img": "https://res.cloudinary.com/dqf8oma0l/image/upload/v1509512807/fashion__zh1lgl.jpg",
+                    "title": "Zalora",
+                    "description": "Zalora<br />11.11 Singles Day Your Way<br />Up to 50% Off",
+                    "url": "http://bit.ly/2hbTcSx",
+                    "img": "image/zalora_square.jpg",
                     "cta" : "Shop Now",
                     "default" : true
                 },
@@ -19,12 +19,10 @@
                     "default" : true
                 },
                 {
-                    "title": "Bags",
-                    "description": "Backpacks, luggage - Carry these great deals on bags!",
-                    "url": "https://iprice.ph/bags/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
-                    "img": "https://res.cloudinary.com/dqf8oma0l/image/upload/v1509512807/bags2__pu7vf0.jpg",
-                    "cta" : "Shop Now",
-                    "default" : true
+                    "title": "Lazada",
+                    "description": "Biggest Sale in The Universe",
+                    "url": "https://iprice.ph/coupons/lazada/?utm_source=onsite&utm_medium=landing_page&utm_campaign=11_11_Sale",
+                    "img": "image/lazada_square.jpg"
                 },
                 {
                     "title": "Shoes",

@@ -10,6 +10,7 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
     <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
     <style amp-custom>
         .how-it-works {
             font-family: "Noto Sans";
@@ -31,13 +32,28 @@
             opacity: 0.6;
         }
 
-        .text {
-            margin-top: -20px;
-        }
-
         .mw { max-width: 1200px; }
         .dn { display: none; }
         .dib { display: inline-block; }
+        .pr { position: relative; }
+        .indicator {
+            text-align: center;
+            background-color: transparent;
+            margin-top: -70px;
+            position: relative;
+        }
+        .icon { 
+            background-color: transparent;
+            border: 1px solid #fff;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            border-radius: 50%;
+        }
+
+        .icon.active {
+            background: #fff;
+        }
 
         /*mobile start*/
         .db { display: block; }
@@ -46,15 +62,17 @@
         .tc { text-align: center; }
         .v-align-m { vertical-align: middle; }
         .w-calc { width: calc(100% - 130px); }
-        .mb-x5 { margin-bottom: 5px; }
+        .mb-x5 { margin-bottom: 10px; }
         .mb-1 { margin-bottom: 10px; }
-        .f2 { font-size: 20px; }
+        .f2 { font-size: 24px; }
         amp-carousel { height: 100vh; }
-        .pt-10 { padding-top: 120px;}
+        amp-carousel section { padding-top: calc(50vh - 250px); }
+        .f5 { font-size: 15px; }
 
         /*mobile end*/
         
         @media (min-width: 831px) {
+            .dn-l { display: none; }
             .db-l { display: block; }
             .w-32 { width: 32%; }
             .w-66 { width: 66%; }
@@ -64,12 +82,14 @@
             .f25-l { font-size: 25px; }
             .ph0-l { padding: 0 20px; }
             .pr-x1-5-l { padding-right: 15px; }
+            .mt2-l { margin-top: -20px; }
+            .f3-l { font-size: 13px; }
         }
 
     </style>
 </head>
 <body>
-    <section class="how-it-works bg-gradient">
+    <section class="how-it-works bg-gradient f5 f3-l">
         <div class="b-wrapper mw m-auto">
             <div class="large-view dn db-l">
                 
@@ -85,7 +105,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami adalah mesin pencari-meta (Seperti Google, tetapi untuk berbelanja!)</p>
                             </div>
                         </div>
@@ -95,7 +115,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami mengkategorikan ratusan juta produk dan ribuan toko online di Asia Tenggara. </p>
                             </div>
                         </div>
@@ -105,7 +125,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami mandiri dan menyampaikan informasi yang jelas dan menyeluruh. </p>
                             </div>
                         </div>    
@@ -126,7 +146,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami membantu Anda mencari penawaran terbaik untuk produk terbaik dan harga terbaik.</p>
                             </div>
                         </div>
@@ -136,7 +156,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami membantu Anda membandingkan produk-produk terbaik untuk pilihan terbaik.</p>
                             </div>
                         </div>
@@ -146,7 +166,7 @@
                             height="160"
                             layout="fixed"
                             ></amp-img>    
-                            <div class="text pr-x1-5-l">
+                            <div class="text pr-x1-5-l mt2-l">
                                 <p>Kami membantu Anda berhemat uang, waktu dan tenaga.</p>
                             </div>
                         </div>    
@@ -156,7 +176,7 @@
             </div>
 
             <!-- MOBILE -->
-            <div>
+            <div class="carousel-wrap pr">
                 <amp-carousel width="400"
                   height="700"
                   layout="responsive"
@@ -164,48 +184,52 @@
                   media="(max-width: 830px)"
                   class="bg-solid"
                   controls
+                  [slide]="selectedSlide"
+                  on="slideChange:AMP.setState({selectedSlide: event.index})"
                   >
-                <div class="pa1 pt-10">
-                    <h3 class="f2 tc mb-1">Siapakah kami?</h3>
-                    <div class="art-work">
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
-                            <amp-img src="../images/visual1@2x.png"
-                                class="dib v-align-m"
-                                width="120"
-                                height="115"
-                                ></amp-img>    
-                                <div class="text dib v-align-m w-calc">
-                                    <p>Kami adalah mesin pencari-meta (Seperti Google, tetapi untuk berbelanja!)</p>
-                                </div>
+                <div class="pa1">
+                    <section>
+                        <h3 class="f2 tc mb-1">Siapakah kami?</h3>
+                        <div class="art-work">
+                            <div class="media db v-align-t bg-gradient mb-x5">
+                                <amp-img src="../images/visual1@2x.png"
+                                    class="dib v-align-m"
+                                    width="120"
+                                    height="115"
+                                    ></amp-img>    
+                                    <div class="text dib v-align-m w-calc">
+                                        <p>Kami adalah mesin pencari-meta (Seperti Google, tetapi untuk berbelanja!)</p>
+                                    </div>
+                            </div>
+                            <div class="media db v-align-t bg-gradient mb-x5">
+                                <amp-img src="../images/visual2@2x.png"
+                                    class="dib v-align-m"
+                                    width="120"
+                                    height="115"
+                                    ></amp-img>    
+                                    <div class="text dib v-align-m w-calc">
+                                        <p>Kami mengkategorikan ratusan juta produk dan ribuan toko online di Asia Tenggara. </p>
+                                    </div>
+                            </div>
+                            <div class="media db v-align-t bg-gradient mb-x5">
+                                <amp-img src="../images/visual3@2x.png"
+                                    class="dib v-align-m"
+                                    width="120"
+                                    height="115"
+                                    ></amp-img>    
+                                    <div class="text dib v-align-m w-calc">
+                                        <p>Kami mandiri dan menyampaikan informasi yang jelas dan menyeluruh. </p>
+                                    </div>
+                            </div>  
                         </div>
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
-                            <amp-img src="../images/visual2@2x.png"
-                                class="dib v-align-m"
-                                width="120"
-                                height="115"
-                                ></amp-img>    
-                                <div class="text dib v-align-m w-calc">
-                                    <p>Kami mengkategorikan ratusan juta produk dan ribuan toko online di Asia Tenggara. </p>
-                                </div>
-                        </div>
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
-                            <amp-img src="../images/visual3@2x.png"
-                                class="dib v-align-m"
-                                width="120"
-                                height="115"
-                                ></amp-img>    
-                                <div class="text dib v-align-m w-calc">
-                                    <p>Kami mandiri dan menyampaikan informasi yang jelas dan menyeluruh. </p>
-                                </div>
-                        </div>  
-                    </div>
+                    </section>
                 </div>
 
-                
-               <div class="pa1 pt-10">
-                    <h3 class="f2 tc mb-1">Apa yang kami lakukan?</h3>
+               <div class="pa1">
+                <section>
+                    <h3 class="f2 tc mb-1">Apa yang kami lakukan?</h3>    
                     <div class="art-work">
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
+                        <div class="media db bg-gradient mb-x5">
                             <amp-img src="../images/visual4@2x.png"
                                 class="dib v-align-m"
                                 width="120"
@@ -215,7 +239,7 @@
                                     <p>Kami membantu Anda mencari penawaran terbaik untuk produk terbaik dan harga terbaik.</p>
                                 </div>
                         </div>
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
+                        <div class="media db bg-gradient mb-x5">
                             <amp-img src="../images/visual5@2x.png"
                                 class="dib v-align-m"
                                 width="120"
@@ -225,7 +249,7 @@
                                     <p>Kami membantu Anda membandingkan produk-produk terbaik untuk pilihan terbaik.</p>
                                 </div>
                         </div>
-                        <div class="media db v-align-t bg-gradient mb-x5 pv2">
+                        <div class="media db bg-gradient mb-x5">
                             <amp-img src="../images/visual6@2x.png"
                                 class="dib v-align-m"
                                 width="120"
@@ -236,8 +260,13 @@
                                 </div>
                         </div>    
                     </div>
+                </section>
                 </div>
                 </amp-carousel>
+                <div class="indicator dn-l">
+                    <span class="icon active" [class]="selectedSlide == 0 ? 'icon active' : 'icon inactive' "></span>
+                    <span class="icon" [class]="selectedSlide == 1 ? 'icon active' : 'icon inactive' "></span>
+                </div>
             </div>
 
         </div>

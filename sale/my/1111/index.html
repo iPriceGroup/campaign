@@ -38,22 +38,14 @@
 		        "experiment": "${pageview}&xid=${experiment}&xvar=${variant}"
 		      },
 		      "triggers": {
-		        "default pageview": {
+		        "trackPageview": {
 		          "on": "visible",
 		          "request": "experiment",
 		          "vars": {
 		            "experiment": "ZYbrfi-URSmwb9R5LTWv6Q",
 		            "variant": "VARIANT(button-color-experiment)"
 		          }
-		        },
-		        "trackClicks":{
-					"on": "click",
-					"selector": "button",
-					"request": "event",
-					"vars": {
-        				"eventCategory": "click"
-					}
-		    	}
+		        }
 		      }
 		    }
 		  </script>
